@@ -20,7 +20,10 @@ class AccessPackages(object):
         for f in files:
             if not pkgcache.has_key(f):
                 self.populate(pkgcache, f)
-            self.packages[f] = pkgcache[f]
+            if not pkgcache.has_key(f):
+                self.packages[f] = 'UNKNOWN'
+            else:
+                self.packages[f] = pkgcache[f]
 
     def packagemap(self):
         return self.packages
