@@ -23,6 +23,9 @@ class AccessPackages(object):
             self.packages[f] = pkgcache[f]
 
     def packagemap(self):
+        return self.packages
+
+    def formatmap(self):
         return pprint.pformat(self.packages)
 
     def populate(self, pkgcache, f):
