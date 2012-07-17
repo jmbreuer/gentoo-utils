@@ -16,8 +16,8 @@ class AccessFiles(object):
         for b in logBlocks:
             if b == None:
                 continue
-            if b['function'] == 'open_rd':
-                self.__files__.add(b['canonical'])
+            if b.function == 'open_rd':
+                self.__files__.add(b.canonical)
     
     def value(self):
         return self.__files__
